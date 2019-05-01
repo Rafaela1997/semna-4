@@ -43,5 +43,5 @@ for(let i=0; i < obj.length; i++){
     container.appendChild(card);
     card.appendChild(h1);
     card.appendChild(p);
-  
   }
+  

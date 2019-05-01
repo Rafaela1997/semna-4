@@ -33,3 +33,38 @@ const data = [{
     "art_url": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/005.png",
     "types": ["fire"]
 }]
+
+//inicio do exercicio
+
+const app = document.getElementById("root");
+const container = document.createElement("div");
+container.setAttribute("class","container");
+app.appendChild(container);
+
+console.log(data)
+
+data.forEach(pokemon =>{
+    console.log(pokemon)
+
+    let card = document.createElement ("div");
+    card.setAttribute ("class", "card");
+    container.appendChild(card);
+
+  let titulo = document.createElement("h1")
+    titulo.innerHTML= pokemon.name;
+    card.appendChild(titulo);
+
+    let descricao = document.createElement("p");
+    descricao.innerHTML= pokemon.description;
+    card.appendChild(descricao)
+
+    let  image = document.createElement("img");
+    image.setAttribute ("src", pokemon.art_url);
+    titulo.appendChild(image);
+
+    let tipo = document.createElement("p")
+    if(pokemon.types.length>1){
+        tipo.innerHTML= "type: " + pokemon.types[0]+" e " + pokemon[1]
+        card.appendChild(tipo);
+    }
+})
